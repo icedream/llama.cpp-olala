@@ -4415,6 +4415,7 @@ server_context_meta server_context::get_meta() const {
         /* model_n_params         */ llama_model_n_params(impl->model_tgt),
         /* model_size             */ llama_model_size(impl->model_tgt),
         /* model_ftype            */ ftype_name,
+        /* model_n_predict        */ impl->params_base.n_predict,
     };
 }
 
@@ -4753,6 +4754,7 @@ static json get_res_model_info(const server_context_meta & meta) {
             {"n_params",    meta.model_n_params},
             {"size",        meta.model_size},
             {"ftype",       meta.model_ftype},
+            {"n_predict",   meta.model_n_predict},
         }},
     };
 }

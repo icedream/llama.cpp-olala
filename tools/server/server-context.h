@@ -52,6 +52,7 @@ struct server_context_meta {
     uint64_t model_n_params;
     uint64_t model_size;
     std::string model_ftype;
+    int32_t model_n_predict; // -n/--n-predict default, -1 == no limit
 };
 
 enum server_state {
